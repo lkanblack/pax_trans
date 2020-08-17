@@ -18,10 +18,24 @@
 
     <div class="container mt-5">
         <div class="row">
-            <div class="acc">
-                <h2>Hello <span><?php echo $name;?></span></h2>
-                <p>Wallet name: <b><?php echo $nick ?></b></p>
-                <p>Balance : <b><?php echo $amount ?></b> EUR</p>
+            <div class="col-md-6">
+                <div class="acc">
+                    <h2>Hello <span><?php echo $name;?></span></h2>
+                    <p>Wallet name: <b><?php echo $nick ?></b></p>
+                    <p>Balance : <b><?php echo $amount ?></b> EUR</p>
+                    <a style="color:red" href="index.php">Return</a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Transaction</h2>
+                <form method="POST" action="sendmoney.php">
+                    <p>commission - 1.5%.</p>
+                    <input type="text" class="form-control mb-2" name="wallet" id="wallet" placeholder="Wallet" >
+                    <input type="text" class="form-control mb-2" name="pay" id="pay" placeholder="Sum" >
+                    <button class="btn btn-primary" type="submit">Send</button>
+
+                </form>
             </div>
         </div>
     </div>

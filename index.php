@@ -35,59 +35,69 @@
                 </form>
 
             </div>
-            <div class="col-md-5 mt-5">
-            <h2>Registered wallets</h2>
-            <div class="wallets">
-                <div class="block">
-                    
-                    <b>Wallets:</b>
-                    <br>
-                    <?php
-                        $mysql = new mysqli('localhost', 'root', 'root', 'transaction');
-                        $info = mysqli_query($mysql, "SELECT * FROM `wallets`");
-
-                        while ($content = mysqli_fetch_assoc($info)){
-                        echo $content['login'];
-                        echo "<br>";
-                        }
-
-                    ?>
-                    </div>
+            <div class="col-md-5  mt-5">
+                <h2>Registered wallets</h2>
+                <div class="wallets">
+                    <div class="block">
                         
-                <div class="block">
-                    
-                    <b>Name:</b>
-                    <br>
-                    <?php
-                        $mysql = new mysqli('localhost', 'root', 'root', 'transaction');
-                        $info = mysqli_query($mysql, "SELECT * FROM `wallets`");
+                        <b>Wallets:</b>
+                        <br>
+                        <?php
+                            $mysql = new mysqli('localhost', 'root', 'root', 'transaction');
+                            $info = mysqli_query($mysql, "SELECT * FROM `wallets`");
 
-                        while ($content = mysqli_fetch_assoc($info)){
-                        echo $content['name'];
-                        echo "<br>";
-                        }
+                            while ($content = mysqli_fetch_assoc($info)){
+                            echo $content['login'];
+                            echo "<br>";
+                            }
 
-                    ?>
-                    </div>
+                        ?>
+                        </div>
+                            
+                    <div class="block">
                         
-                <div class="block">
+                        <b>Name:</b>
+                        <br>
+                        <?php
+                            $mysql = new mysqli('localhost', 'root', 'root', 'transaction');
+                            $info = mysqli_query($mysql, "SELECT * FROM `wallets`");
+
+                            while ($content = mysqli_fetch_assoc($info)){
+                            echo $content['name'];
+                            echo "<br>";
+                            }
+
+                        ?>
+                        </div>
+                            
+                    <div class="block">
+                        
+                        <b>Amount:</b>
+                        <br>
+                        <?php
+                            $mysql = new mysqli('localhost', 'root', 'root', 'transaction');
+                            $info = mysqli_query($mysql, "SELECT * FROM `wallets`");
+
+                            while ($content = mysqli_fetch_assoc($info)){
+                            echo $content['amount'];
+                            echo "<br>";
+                            }
+
+                        ?>
+                        </div>
                     
-                    <b>Amount:</b>
-                    <br>
-                    <?php
-                        $mysql = new mysqli('localhost', 'root', 'root', 'transaction');
-                        $info = mysqli_query($mysql, "SELECT * FROM `wallets`");
-
-                        while ($content = mysqli_fetch_assoc($info)){
-                        echo $content['amount'];
-                        echo "<br>";
-                        }
-
-                    ?>
                     </div>
-                
-                </div>
             </div>
+            <!-- <div class="col-md-6 offset-md-1">
+                <h2>Transaction</h2>
+                <form method="POST" action="sendmoney.php">
+                    <p>commission - 1.5%.</p>
+                    <input type="text" class="form-control mb-2" name="wallet" id="wallet" placeholder="Wallet" >
+                    <input type="text" class="form-control mb-2" name="pay" id="pay" placeholder="Sum" >
+                    <button class="btn btn-primary" type="submit">Send</button>
+
+                </form>
+            </div> -->
         </div>
     </div>
 
