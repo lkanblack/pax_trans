@@ -22,7 +22,7 @@
                 <div class="acc">
                     <h2>Hello <span><?php echo $name;?></span></h2>
                     <p>Wallet name: <b><?php echo $nick ?></b></p>
-                    <p>Balance : <b><?php echo $amount ?></b> EUR</p>
+                    <p>Balance : <b><?php echo number_format((float)$amount, 2, '.', '') ?></b> EUR</p>
                     <a style="color:red" href="index.php">Return</a>
                 </div>
             </div>
